@@ -1,0 +1,66 @@
+<mvc:View
+    controllerName="com.productapp.controller.Master"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <Page id="masterPage" title="{i18n>masterTitle}" showNavButton="false">
+        <subHeader>
+            <Toolbar>
+                <SearchField id="searchField" width="100%" search=".onSearch" liveChange=".onSearch"/>
+            </Toolbar>
+        </subHeader>
+        <content>
+            <List
+                id="productList"
+                items="{
+                    path: 'products>/',
+                    sorter: {
+                        path: 'Name',
+                        descending: false
+                    }
+                }"
+                mode="SingleSelectMaster"
+                selectionChange=".onSelectionChange">
+                <items>
+                    <ObjectListItem
+                        title="{products>Name}"
+                        type="Active"
+                        press=".onSelectionChange"
+                        number="{
+                            parts: [
+                                {path: 'products>Price'},
+                                {path: 'products>Currency'}
+                            ],
+                            formatter: '.formatter.formatPrice'
+                        }"
+                        numberUnit="{products>Currency}"
+                        intro="{products>Category}"
+                        icon="sap-icon://product">
+                        <firstStatus>
+                            <ObjectStatus
+                                text="{= ${products>InStock} ? 'In Stock' : 'Out of Stock'}"
+                                state="{= ${products>InStock} ? 'Success' : 'Error'}"/>
+                        </firstStatus>
+                        <attributes>
+                            <ObjectAttribute text="{products>Description}"/>
+                            <ObjectAttribute text="Supplier: {products>SupplierName}"/>
+                        </attributes>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <content>
+                    <ToolbarSpacer/>
+                    <Button 
+                        icon="sap-icon://add" 
+                        text="Add Product" 
+                        type="Emphasized" 
+                        press=".onAddPress"/>
+                </content>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,11 @@
+<mvc:View
+    controllerName="com.productapp.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    
+    <SplitApp id="app" defaultTransitionNameDetail="slide" defaultTransitionNameMaster="slide">
+        <!-- Router will automatically add the master and details page here -->
+    </SplitApp>
+    
+</mvc:View>

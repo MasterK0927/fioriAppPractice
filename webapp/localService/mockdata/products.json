@@ -1,0 +1,112 @@
+[
+  {
+    "ProductID": "1",
+    "Name": "Laptop XPS 15",
+    "Description": "High-performance laptop with 15-inch display",
+    "Price": 1299.99,
+    "Currency": "USD",
+    "Category": "Electronics",
+    "SupplierName": "Dell Technologies",
+    "InStock": true,
+    "Quantity": 45,
+    "Rating": 4.5,
+    "ReleaseDate": "2023-05-15",
+    "Specifications": {
+      "Processor": "Intel Core i7-11800H",
+      "RAM": "16GB DDR4",
+      "Storage": "512GB SSD",
+      "Display": "15.6-inch 4K UHD",
+      "Graphics": "NVIDIA GeForce RTX 3050",
+      "Battery": "86Wh",
+      "Weight": "1.8kg"
+    }
+  },
+  {
+    "ProductID": "2",
+    "Name": "Smartphone Galaxy S22",
+    "Description": "Latest smartphone with advanced camera system",
+    "Price": 899.99,
+    "Currency": "USD",
+    "Category": "Mobile Devices",
+    "SupplierName": "Samsung Electronics",
+    "InStock": true,
+    "Quantity": 120,
+    "Rating": 4.7,
+    "ReleaseDate": "2023-02-25",
+    "Specifications": {
+      "Processor": "Snapdragon 8 Gen 1",
+      "RAM": "8GB",
+      "Storage": "256GB",
+      "Display": "6.1-inch Dynamic AMOLED",
+      "Camera": "50MP + 12MP + 10MP",
+      "Battery": "3700mAh",
+      "Weight": "167g"
+    }
+  },
+  {
+    "ProductID": "3",
+    "Name": "Wireless Headphones WH-1000XM5",
+    "Description": "Premium noise-cancelling wireless headphones",
+    "Price": 349.99,
+    "Currency": "USD",
+    "Category": "Audio",
+    "SupplierName": "Sony Corporation",
+    "InStock": true,
+    "Quantity": 75,
+    "Rating": 4.8,
+    "ReleaseDate": "2023-08-10",
+    "Specifications": {
+      "Type": "Over-ear",
+      "Connectivity": "Bluetooth 5.2",
+      "Battery": "30 hours",
+      "NoiseControl": "Adaptive Noise Cancellation",
+      "Weight": "250g",
+      "Charging": "USB-C",
+      "Color": "Black"
+    }
+  },
+  {
+    "ProductID": "4",
+    "Name": "Smart Watch Series 8",
+    "Description": "Advanced health monitoring and fitness tracking",
+    "Price": 399.99,
+    "Currency": "USD",
+    "Category": "Wearables",
+    "SupplierName": "Apple Inc.",
+    "InStock": true,
+    "Quantity": 60,
+    "Rating": 4.6,
+    "ReleaseDate": "2023-09-22",
+    "Specifications": {
+      "Display": "1.9-inch Retina",
+      "Sensors": "Heart rate, ECG, Temperature",
+      "Connectivity": "Bluetooth 5.3, WiFi",
+      "Battery": "18 hours",
+      "Water Resistance": "50m",
+      "GPS": "Precision dual-frequency",
+      "Material": "Aluminum"
+    }
+  },
+  {
+    "ProductID": "5",
+    "Name": "4K Smart TV OLED C2",
+    "Description": "Premium 4K OLED TV with smart features",
+    "Price": 1499.99,
+    "Currency": "USD",
+    "Category": "Home Entertainment",
+    "SupplierName": "LG Electronics",
+    "InStock": true,
+    "Quantity": 30,
+    "Rating": 4.9,
+    "ReleaseDate": "2023-03-15",
+    "Specifications": {
+      "Screen Size": "65-inch",
+      "Resolution": "4K UHD (3840x2160)",
+      "Panel Type": "OLED",
+      "HDR": "Dolby Vision, HDR10",
+      "Refresh Rate": "120Hz",
+      "Smart Platform": "webOS 22",
+      "HDMI Ports": "4 (HDMI 2.1)"
+    }
+  }
+]

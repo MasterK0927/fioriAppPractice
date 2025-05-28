@@ -1,0 +1,54 @@
+{
+  "routes": [
+    {
+      "pattern": "",
+      "name": "master",
+      "target": ["master", "detail"]
+    },
+    {
+      "pattern": "product/{productId}",
+      "name": "detail",
+      "target": ["master", "detail"]
+    },
+    {
+      "pattern": "create",
+      "name": "create",
+      "target": "create"
+    },
+    {
+      "pattern": "edit/{productId}",
+      "name": "edit",
+      "target": "edit"
+    }
+  ],
+  "targets": {
+    "master": {
+      "viewName": "Master",
+      "viewLevel": 1,
+      "viewId": "master",
+      "controlAggregation": "masterPages"
+    },
+    "detail": {
+      "viewName": "Detail",
+      "viewLevel": 2,
+      "viewId": "detail",
+      "controlAggregation": "detailPages"
+    },
+    "create": {
+      "viewName": "Create",
+      "viewLevel": 3,
+      "viewId": "create",
+      "controlAggregation": "detailPages"
+    },
+    "edit": {
+      "viewName": "Edit",
+      "viewLevel": 3,
+      "viewId": "edit",
+      "controlAggregation": "detailPages"
+    },
+    "notFound": {
+      "viewName": "NotFound",
+      "viewId": "notFound"
+    }
+  }
+}

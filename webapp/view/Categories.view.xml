@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="com.productapp.controller.Categories"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    
+    <Page title="Product Categories">
+        <content>
+            <List id="categoryList" 
+                  mode="SingleSelectMaster"
+                  selectionChange=".onCategorySelect">
+                <items>
+                    <StandardListItem 
+                        title="Electronics" 
+                        description="Tech products"
+                        type="Active"/>
+                    <StandardListItem 
+                        title="Mobile Devices" 
+                        description="Phones and tablets"
+                        type="Active"/>
+                    <StandardListItem 
+                        title="Audio" 
+                        description="Sound equipment"
+                        type="Active"/>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

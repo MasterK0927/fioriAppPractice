@@ -1,0 +1,100 @@
+<mvc:View
+    controllerName="com.productapp.controller.Detail"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="detailPage"
+        title="{products>Name}"
+        showNavButton="{device>/system/phone}"
+        navButtonPress=".onNavBack">
+        
+        <content>
+            <ObjectHeader
+                title="{products>Name}"
+                number="{
+                    parts: [
+                        {path: 'products>Price'},
+                        {path: 'products>Currency'}
+                    ],
+                    formatter: '.formatter.formatPrice'
+                }"
+                numberUnit="{products>Currency}">
+                <statuses>
+                    <ObjectStatus
+                        text="{= ${products>InStock} ? 'In Stock' : 'Out of Stock'}"
+                        state="{= ${products>InStock} ? 'Success' : 'Error'}"/>
+                </statuses>
+                <attributes>
+                    <ObjectAttribute text="Category: {products>Category}" />
+                    <ObjectAttribute text="Supplier: {products>SupplierName}" />
+                    <ObjectAttribute text="Rating: {products>Rating}/5" />
+                    <ObjectAttribute text="Release Date: {products>ReleaseDate}" />
+                </attributes>
+            </ObjectHeader>
+            
+            <IconTabBar id="idIconTabBar" expanded="{device>/system/phone}" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter icon="sap-icon://hint" key="info" text="Description">
+                        <Text text="{products>Description}" />
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://technical-object" key="specs" text="Specifications">
+                        <f:SimpleForm
+                            editable="false"
+                            layout="ResponsiveGridLayout"
+                            labelSpanXL="4"
+                            labelSpanL="4"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="2"
+                            columnsL="2"
+                            columnsM="2"
+                            singleContainerFullSize="false">
+                            <f:content>
+                                <!-- Controller will add the specifications dynamically hereS -->
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://inventory" key="stock" text="Stock">
+                        <f:SimpleForm
+                            editable="false"
+                            layout="ResponsiveGridLayout">
+                            <f:content>
+                                <Label text="Quantity" />
+                                <Text text="{products>Quantity}" />
+                                <Label text="Status" />
+                                <ObjectStatus
+                                    text="{= ${products>InStock} ? 'In Stock' : 'Out of Stock'}"
+                                    state="{= ${products>InStock} ? 'Success' : 'Error'}"/>
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        
+        <footer>
+            <Toolbar>
+                <content>
+                    <ToolbarSpacer/>
+                    <Button 
+                        icon="sap-icon://edit" 
+                        text="Edit" 
+                        press=".onEditPress"/>
+                    <Button 
+                        icon="sap-icon://delete" 
+                        text="Delete" 
+                        press=".onDeletePress"
+                        type="Reject"/>
+                </content>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

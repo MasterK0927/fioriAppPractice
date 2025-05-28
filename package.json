@@ -1,0 +1,11 @@
+{
+  "name": "fioriapppracticejob",
+  "version": "1.0.0",
+  "description": "This is a SAP Fiori UI5 application that provides product management functionality with a split screen interface and full CRUD operations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

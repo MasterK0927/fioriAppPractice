@@ -1,0 +1,117 @@
+<mvc:View
+    controllerName="com.productapp.controller.Create"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="createPage"
+        title="Create New Product"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        
+        <content>
+            <f:SimpleForm
+                id="createProductForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Name" required="true"/>
+                    <Input id="nameInput" value="{products>/Name}" required="true"/>
+                    
+                    <Label text="Description"/>
+                    <Input id="descriptionInput" value="{products>/Description}"/>
+                    
+                    <Label text="Price" required="true"/>
+                    <Input id="priceInput" value="{products>/Price}" type="Number" required="true"/>
+                    
+                    <Label text="Currency"/>
+                    <Select id="currencySelect" selectedKey="{products>/Currency}">
+                        <core:Item key="USD" text="USD"/>
+                        <core:Item key="EUR" text="EUR"/>
+                        <core:Item key="GBP" text="GBP"/>
+                    </Select>
+                    
+                    <Label text="Category"/>
+                    <Input id="categoryInput" value="{products>/Category}"/>
+                    
+                    <Label text="Supplier Name"/>
+                    <Input id="supplierInput" value="{products>/SupplierName}"/>
+                    
+                    <Label text="In Stock"/>
+                    <Switch id="stockSwitch" state="{products>/InStock}"/>
+                    
+                    <Label text="Quantity"/>
+                    <StepInput id="quantityInput" value="{products>/Quantity}" min="0" max="1000"/>
+                    
+                    <Label text="Rating"/>
+                    <RatingIndicator id="ratingInput" value="{products>/Rating}" maxValue="5"/>
+                    
+                    <Label text="Release Date"/>
+                    <DatePicker id="releaseDateInput" value="{products>/ReleaseDate}" valueFormat="yyyy-MM-dd"/>
+                </f:content>
+            </f:SimpleForm>
+            
+            <Panel headerText="Specifications" expandable="true" expanded="true">
+                <Table id="specificationsTable" items="{specs>/specs}">
+                    <columns>
+                        <Column>
+                            <header>
+                                <Text text="Property"/>
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Text text="Value"/>
+                            </header>
+                        </Column>
+                        <Column width="4rem">
+                            <header>
+                                <Text text=""/>
+                            </header>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Input value="{specs>key}"/>
+                                <Input value="{specs>value}"/>
+                                <Button icon="sap-icon://delete" press=".onDeleteSpecification"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <Button text="Add Specification" press=".onAddSpecification" class="sapUiSmallMarginTop"/>
+            </Panel>
+        </content>
+        
+        <footer>
+            <Toolbar>
+                <content>
+                    <ToolbarSpacer/>
+                    <Button 
+                        text="Cancel" 
+                        press=".onNavBack"/>
+                    <Button 
+                        text="Save" 
+                        type="Emphasized" 
+                        press=".onSavePress"/>
+                </content>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
